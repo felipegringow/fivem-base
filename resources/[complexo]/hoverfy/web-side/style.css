@@ -1,0 +1,81 @@
+@import url("https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css");
+@import url("https://fonts.cdnfonts.com/css/akrobat");
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	font-size: 12px;
+	overflow: hidden;
+	background: transparent;
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+#displayNotify {
+	position: absolute;
+	left: 50%;
+	bottom: 6%;
+	transform: translateX(-50%);
+	display: none;
+	color: #fff;
+	line-height: 18px;
+	border-radius: 5px;
+	padding: 15px 20px 15px 15px;
+	height: 50px;
+
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#displayNotify b {
+	color: #fff;
+}
+
+#key {
+	width: 50px;
+
+	aspect-ratio: 1/1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #d0d0d0;
+
+	font-size: 20px;
+	margin-right: 10px;
+	text-align: center;
+	border-radius: 5px;
+	border-radius: 0.4rem;
+	background: #F50A46;
+	font-family: "Akrobat", sans-serif;
+	font-weight: 900;
+	color: #fff;
+}
+
+#text {
+	font-family: "Akrobat", sans-serif;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 10px;
+	border-radius: 0.4rem;
+	background: rgba(10, 10, 10, 0.45);
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.65);
+}
+
+#text b {
+	font-size: 16px;
+	font-weight: 900;
+	color: #fff;
+}

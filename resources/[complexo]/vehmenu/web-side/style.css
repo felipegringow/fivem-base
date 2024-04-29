@@ -1,0 +1,77 @@
+@import url("https://gistcdn.githack.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css");
+@import url("https://fonts.cdnfonts.com/css/akrobat");
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	font-size: 12px;
+	overflow: hidden;
+	background: transparent;
+	font-family: "Akrobat", Arial, Helvetica, sans-serif;
+}
+
+#vehicleBackground {
+	width: 100%;
+	bottom: 90px;
+	display: none;
+	position: fixed;
+}
+
+#vehicleLayout {
+	width: fit-content;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.vehicleButton {
+	float: left;
+	width: 50px;
+	height: 50px;
+	aspect-ratio: 1/1;
+	padding: 5px;
+	background: rgba(10, 10, 10, 0.25);
+	transition: 0.2s ease-in-out;
+	margin: 2px;
+	border-radius: 5px;
+
+}
+
+.vehicleButton:hover {
+	background-color: rgba(245, 10, 69, 0.8);
+	text-shadow: 1px 0px #00000062;
+}
+
+.vehicleButton img {
+	filter: brightness(100) saturate(1) invert(0) sepia(0) hue-rotate(0deg);
+}
+
+
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+.ui-tooltip {
+	z-index: 9999;
+	padding: 10px 15px;
+	color: #fff;
+	font-family: "Akrobat", sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	border-radius: 4px;
+	position: absolute;
+	background: #f50a46;
+	letter-spacing: 1px;
+	transition: 0.5s ease-in-out;
+	font-size: 14px;
+
+}
+
+.ui-tooltip:hover {
+	display: none;
+}

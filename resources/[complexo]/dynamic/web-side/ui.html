@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CPX - Radial Menu</title>
+
+    <script type="text/javascript" src="nui://game/ui/jquery.js"></script>
+    <script type="text/javascript" src="js/RadialMenu.js"></script>
+    <script type="text/javascript" src="js/all.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/RadialMenu.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        const resourceName = GetParentResourceName();
+
+        let menuKeybind = "";
+        let menu = null;
+        window.addEventListener("message", function (event) {
+          let eventData = event.data;
+          menuKeybind = eventData.menuKeyBind;
+          if (eventData.state === "show") {
+            $("#container").append(`<div id="navMenu"></div>`);
+            let style = eventData.rootStyle;
+            menu = new RadialMenu({
+              parent: document.getElementById("navMenu"),
+              size: 450,
+              closeOnClick: true,
+              menuItems: eventData.data,
+              isNight: eventData.isNight,
+              onClick: function (item) {
+                if (!item?.id) return;
+
+                $.post(
+                  `https://${resourceName}/triggerAction`,
+                  JSON.stringify({
+                    id: item.id,
+                  })
+                );
+              },
+            });
+            menu.open();
+          } else if (eventData.state === "destroy") {
+            $("#navMenu").remove();
+            menu.close();
+          }
+        });
+      });
+    </script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        font-family: "Roboto";
+      }
+
+      #container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .menuHolder {
+        font-size: 10px;
+      }
+
+      #icons {
+        display: none;
+        filter: url(#drop-shadow);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HTML code -->
+
+    <div id="container">
+      <div id="navMenu"></div>
+    </div>
+  </body>
+</html>
