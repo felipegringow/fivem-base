@@ -429,7 +429,7 @@ end)
 
 exports("UpdateSkin",function()
     local ply = PlayerPedId()
-    SetPedHeadBlendData(ply, customization.fathers, customization.mothers, 0, customization.skinColor, customization.skinColorParents, 0,  0.0, true)
+    SetPedHeadBlendData(ply, customization.fathers, customization.mothers, 0, customization.skinColor, customization.skinColorParents, 0, (customization.skinMix + 0.0), (customization.skinColorMix + 0.0), 0.0, true)
 end)
 
 exports("UpdateFace",function()
